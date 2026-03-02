@@ -107,11 +107,6 @@ class ShareController extends AbstractController
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer|null $quoteTransfer
-     *
-     * @return bool
-     */
     protected function canShareQuote(?QuoteTransfer $quoteTransfer = null): bool
     {
         if (!$quoteTransfer || $this->isQuoteLocked($quoteTransfer)) {
@@ -121,11 +116,6 @@ class ShareController extends AbstractController
         return $this->isQuoteAccessOwner($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteLocked(QuoteTransfer $quoteTransfer): bool
     {
         return $this->getFactory()
@@ -133,11 +123,6 @@ class ShareController extends AbstractController
             ->isQuoteLocked($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteAccessOwner(QuoteTransfer $quoteTransfer): bool
     {
         return $this->getFactory()->getSharedCartClient()->getQuoteAccessLevel($quoteTransfer) === static::PERMISSION_GROUP_OWNER_ACCESS;

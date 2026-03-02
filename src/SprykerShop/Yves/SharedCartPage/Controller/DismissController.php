@@ -28,11 +28,6 @@ class DismissController extends AbstractController
      */
     public const KEY_GLOSSARY_SHARED_CART_PAGE_DISMISS_SUCCESS = 'shared_cart_page.dismiss.success';
 
-    /**
-     * @param int $idQuote
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function indexAction(int $idQuote): RedirectResponse
     {
         $quoteTransfer = $this->getFactory()

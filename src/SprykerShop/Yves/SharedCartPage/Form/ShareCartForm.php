@@ -65,11 +65,6 @@ class ShareCartForm extends AbstractType
         return static::FORM_NAME;
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_PERMISSION_GROUPS);

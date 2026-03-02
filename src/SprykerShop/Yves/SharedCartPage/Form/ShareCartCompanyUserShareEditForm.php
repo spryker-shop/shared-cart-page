@@ -24,11 +24,6 @@ class ShareCartCompanyUserShareEditForm extends AbstractType
      */
     public const FIELD_QUOTE_PERMISSION_GROUP = 'quotePermissionGroup';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefined(ShareCartForm::OPTION_PERMISSION_GROUPS);
@@ -81,9 +76,6 @@ class ShareCartCompanyUserShareEditForm extends AbstractType
         );
     }
 
-    /**
-     * @return \Closure
-     */
     protected function createTransformCallback(): Closure
     {
         return function ($quotePermissionGroupTransfer) {
@@ -96,9 +88,6 @@ class ShareCartCompanyUserShareEditForm extends AbstractType
         };
     }
 
-    /**
-     * @return \Closure
-     */
     protected function createReverseTransformCallback(): Closure
     {
         return function ($idQuotePermissionGroup) {

@@ -38,9 +38,6 @@ class SharedCartPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Form\DataProvider\ShareCartFormDataProviderInterface
-     */
     public function createShareCartFormDataProvider(): ShareCartFormDataProviderInterface
     {
         return new ShareCartFormDataProvider(
@@ -51,49 +48,31 @@ class SharedCartPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToMultiCartClientInterface
-     */
     public function getMultiCartClient(): SharedCartPageToMultiCartClientInterface
     {
         return $this->getProvidedDependency(SharedCartPageDependencyProvider::CLIENT_MULTI_CART);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToQuoteClientInterface
-     */
     public function getQuoteClient(): SharedCartPageToQuoteClientInterface
     {
         return $this->getProvidedDependency(SharedCartPageDependencyProvider::CLIENT_QUOTE);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactoryInterface
-     */
     public function getFormFactory(): FormFactoryInterface
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToCustomerClientInterface
-     */
     public function getCustomerClient(): SharedCartPageToCustomerClientInterface
     {
         return $this->getProvidedDependency(SharedCartPageDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToCompanyUserClientInterface
-     */
     public function getCompanyUserClient(): SharedCartPageToCompanyUserClientInterface
     {
         return $this->getProvidedDependency(SharedCartPageDependencyProvider::CLIENT_COMPANY_USER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToSharedCartClientInterface
-     */
     public function getSharedCartClient(): SharedCartPageToSharedCartClientInterface
     {
         return $this->getProvidedDependency(SharedCartPageDependencyProvider::CLIENT_SHARED_CART);

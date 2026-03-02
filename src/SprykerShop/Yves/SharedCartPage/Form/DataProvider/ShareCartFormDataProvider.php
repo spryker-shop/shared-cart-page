@@ -51,12 +51,6 @@ class ShareCartFormDataProvider implements ShareCartFormDataProviderInterface
      */
     protected $multiCartClient;
 
-    /**
-     * @param \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToCustomerClientInterface $customerClient
-     * @param \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToCompanyUserClientInterface $companyUserClient
-     * @param \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToSharedCartClientInterface $sharedCartClient
-     * @param \SprykerShop\Yves\SharedCartPage\Dependency\Client\SharedCartPageToMultiCartClientInterface $multiCartClient
-     */
     public function __construct(
         SharedCartPageToCustomerClientInterface $customerClient,
         SharedCartPageToCompanyUserClientInterface $companyUserClient,
@@ -133,9 +127,6 @@ class ShareCartFormDataProvider implements ShareCartFormDataProviderInterface
         return $indexedExistingCompanyUsers;
     }
 
-    /**
-     * @return array
-     */
     protected function getCustomerListData(): array
     {
         $customer = $this->customerClient->getCustomer();
@@ -178,9 +169,6 @@ class ShareCartFormDataProvider implements ShareCartFormDataProviderInterface
         return $businessUnitCompanyUserList;
     }
 
-    /**
-     * @return array
-     */
     protected function getQuotePermissionGroups(): array
     {
         $criteriaFilterTransfer = new QuotePermissionGroupCriteriaFilterTransfer();
